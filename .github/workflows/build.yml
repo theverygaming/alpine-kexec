@@ -1,5 +1,7 @@
 name: Build
 on: push
+permissions:
+  contents: write
 jobs:
   docker-build-release:
     runs-on: ubuntu-latest
