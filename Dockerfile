@@ -5,9 +5,7 @@ WORKDIR /src
 COPY ./src /src
 
 RUN apk --no-cache add \
-    curl \
-    cpio \
-    findutils
+    curl
 
 ENV ALPINE_VERSION=${ALPINE_VERSION}
 RUN ./alpine-build-root.sh

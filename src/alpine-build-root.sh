@@ -32,7 +32,9 @@ EOF
 rm ./etc/resolv.conf
 
 # build the initramfs image
-find . -print0 | cpio --null --create --verbose --format=newc --owner root:root > ../initramfs
+#find . -print0 | cpio --null --create --verbose --format=newc --owner root:root > ../initramfs
+#mkinitramfs -o ../initramfs -r ./ -v
+find . | sort | cpio --quiet --renumber-inodes -o -H newc > ../initramfs
 
 cd ..
 
